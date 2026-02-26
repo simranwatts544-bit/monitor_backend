@@ -1,0 +1,46 @@
+from="1771906020000"
+to="1771992420000"
+
+from= 24 February 2026
+
+to= 25 February 2026
+
+select type, sum(records) as sum from collectionsMetaData where DATETIME between "1771906020000" and "1771992420000" group by type order by sum DESC;
+
++---------------+--------+
+| type          | sum    |
++---------------+--------+
+| twitter       | 1268334 |
+| tumblr        | 673768 |
+| pinterest     | 422594 |
+| youtube       | 263689 |
+| dailymotion   | 193091 |
+| ask           | 185681 |
+| wordpress     | 112258 |
+| toutiao       | 83839  |
+| rutube        | 73530  |
+| reddit        | 62611  |
+| flickr        | 35446  |
+| facebook      | 27885  |
+| telegram      | 27623  |
+| moimir        | 25478  |
+| vk            | 11774  |
+| qq            | 8112   |
+| chirpwire     | 7160   |
+| tiktok        | 6306   |
+| instagram     | 4382   |
+| federated     | 2395   |
+| linkedin      | 2066   |
+| weibo         | 1558   |
+| tencent_video | 1200   |
+| discord       | 650    |
+| youku         | 356    |
+| ok            | 249    |
+| douban        | 0      |
+| douyin        | 0      |
+| google_news   | 0      |
++---------------+--------+
+
+29 rows in set (0.794 sec)
+
+Total = 3502035 records

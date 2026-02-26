@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'apps.monitoring',
     'apps.reports',
     'apps.logs',
+    'source_manager',
 ]
 
 MIDDLEWARE = [
@@ -81,8 +82,21 @@ DATABASES = {
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
+    },
+    'federated': {  # Using credentials from your original script
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'FederatedSearch',
+        'USER': 'root',  # From your script: 'user': 'root'
+        'PASSWORD': '123456789',  # From your script: 'password': '123456789'
+        'HOST': '142.198.63.222',  # From your script: 'host': '142.198.63.222'
+        'PORT': '3306',  # Keep default port
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
+
 }
+   
 
 # Use PyMySQL if mysqlclient is not available
 try:
